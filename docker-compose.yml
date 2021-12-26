@@ -2,7 +2,7 @@ version: '3'
 
 services:
   php:
-    container_name: sample_app_php # ここを変更する
+    container_name: my_todo_php # ここを変更する
     build:
       context: .
       dockerfile: ./docker/php/Dockerfile
@@ -11,7 +11,7 @@ services:
 
   nginx:
     image: nginx
-    container_name: sample_app_nginx # ここを変更する
+    container_name: my_todo_nginx # ここを変更する
     ports:
     - 80:80
     volumes:
@@ -22,10 +22,10 @@ services:
 
   db:
     image: mysql:5.7.26
-    container_name: sample_app_db # ここを変更する
+    container_name: my_todo_db # ここを変更する
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: sample_db # ここを変更する
+      MYSQL_DATABASE: my_todo_db # ここを変更する
       MYSQL_USER: docker
       MYSQL_PASSWORD: docker
       TZ: 'Asia/Tokyo'
