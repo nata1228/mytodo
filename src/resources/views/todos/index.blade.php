@@ -13,11 +13,16 @@
         <button>追加</button>
 <div class="a">
     <div class="b">
-        <p>タスク内容</p>
-        <p>期日</p>
-        <button type="submit">編集</button>
-        <button type="submit">削除</button>
+        @foreach($tasks as $task)
+        <p>{{$task->name}}</p>
+        <p>{{$task->limit}}</p>
+        @endforeach
+        <div>
+            <button type="submit">編集</button>
+            <button type="submit">削除</button>
+        </div>
     </div>
+
 </div>
 </body>
 </html>
