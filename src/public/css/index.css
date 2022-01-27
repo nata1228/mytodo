@@ -11,8 +11,7 @@ p{
     font-size: 30px;
 }
 
-button{
-    font-size: 15px;
-    height: 30px;
-    padding: 0 15px;
+.btn{
+    display: flex;
+    justify-content: flex-end;
 }

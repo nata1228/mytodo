@@ -23,4 +23,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // Route::get('localhost以降のURL', 'コントローラー名@関数名')->name('localhost以降のURL.関数名');
 Route::get('/todos', 'TaskController@index')->name('todos.index');
-Route::get('/edit/{id}', 'TaskController@edit')->name('edit.index');
+Route::get('/todos/{id}', 'TaskController@edit')->name('edit.index');

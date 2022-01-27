@@ -9,6 +9,6 @@
 </head>
 <body>
     <input type="text">
-    <button>更新する</button>
+    <a href="{{url('/todos')}}">更新する</a>
 </body>
 </html>

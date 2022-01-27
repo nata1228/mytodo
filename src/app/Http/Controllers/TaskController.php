@@ -14,6 +14,6 @@ class TaskController extends Controller
 
     public function edit($id){
         $body = Task::find($id);
-        return view('todos.edit');
+        return view('todos.edit',compact('body'));
     }
 }
