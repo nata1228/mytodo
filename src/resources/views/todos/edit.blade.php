@@ -8,7 +8,7 @@
     <title>編集</title>
 </head>
 <body>
-    <input type="text">
+    <input type="text" value="{{$task->name}}">
     <a href="{{url('/todos')}}">更新する</a>
 </body>
 </html>

@@ -8,12 +8,14 @@ use App\Models\Task;
 class TaskController extends Controller
 {
     public function index(){
+        // get, allは配列で帰ってくる
         $tasks = Task::all();
         return view('todos.index',compact('tasks'));
     }
 
     public function edit($id){
-        $body = Task::find($id);
-        return view('todos.edit',compact('body'));
+        // オブジェクトで返るってくる
+        $task = Task::find($id);
+        return view('todos.edit',compact('task'));
     }
 }

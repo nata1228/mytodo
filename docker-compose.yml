@@ -21,7 +21,8 @@ services:
     - php
 
   db:
-    image: mysql:5.7.26
+    image: mysql:8.0
+    platform: linux/x86_64
     container_name: my_todo_db # ここを変更する
     environment:
       MYSQL_ROOT_PASSWORD: root
