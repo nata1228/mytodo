@@ -13,7 +13,14 @@ class TaskController extends Controller
     }
 
     public function edit($id){
-        $body = Task::find($id);
-        return view('todos.edit',compact('body'));
+        $task = Task::find($id);
+        return view('todos.edit',compact('task'));
+    }
+
+    public function store(Request $request){
+        $task = new Task();
+        $task->name = $request->name;
+        $task->save();
+        return redirect('/tasks');
     }
 }

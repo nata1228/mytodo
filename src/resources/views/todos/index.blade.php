@@ -9,18 +9,19 @@
     <title>Todoリスト</title>
 </head>
 <body>
-        <input type="text" name="name" value="{{ old('name') }}">
+        <input type="text">
         <button>追加</button>
 <div class="a">
     <div class="b">
         @foreach($tasks as $task)
-        <p>{{$task->name}}</p>
-        <p>{{$task->limit}}</p>
+            <p>{{$task->name}}</p>
+            <p>{{$task->limit}}</p>
+        
+            <div class="btn">
+            <a href="/tasks/{{$task->id}}">編集</a>
+            <a>削除</a>
+            </div>
         @endforeach
-        <div class="btn">
-            <p><a href="{{url('/todos/{id}')}}">編集</a></p>
-            <p><a>削除</a></p>
-        </div>
     </div>
 
 </div>
