@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,3 +25,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 // Route::get('localhost以降のURL', 'コントローラー名@関数名')->name('localhost以降のURL.関数名');
 Route::get('tasks', 'TaskController@index')->name('tasks.index');
 Route::get('/tasks/{id}', 'TaskController@edit')->name('tasks.edit');
+Route::post('/tasks/create','TaskController@store')->name('tasks.store');

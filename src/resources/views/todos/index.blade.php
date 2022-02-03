@@ -9,20 +9,25 @@
     <title>Todoリスト</title>
 </head>
 <body>
-        <input type="text">
-        <button>追加</button>
+        <form action="{{route('tasks.store')}}" method="post">
+        @csrf
+            <input type="text">
+            <button>追加</button>
+        </form>
+            
 <div class="a">
-    <div class="b">
-        @foreach($tasks as $task)
+    @foreach($tasks as $task)
+        <div class="b">
             <p>{{$task->name}}</p>
             <p>{{$task->limit}}</p>
-        
+
             <div class="btn">
-            <a href="/tasks/{{$task->id}}">編集</a>
-            <a>削除</a>
+                <a href="/tasks/{{$task->id}}">編集</a>
+                <a>削除</a>
             </div>
-        @endforeach
-    </div>
+        </div>
+    @endforeach
+    
 
 </div>
 </body>
