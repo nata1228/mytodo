@@ -11,7 +11,8 @@
 <body>
         <form action="{{route('tasks.store')}}" method="post">
         @csrf
-            <input type="text">
+            <input type="text" name="name">
+            <input type="date" name="limit">
             <button>追加</button>
         </form>
             
@@ -23,7 +24,11 @@
 
             <div class="btn">
                 <a href="/tasks/{{$task->id}}">編集</a>
-                <a>削除</a>
+                    <form action="{{route('tasks.delete')}}" method="post">
+                    @csrf
+                        <button>削除</button>
+                    </form>
+                
             </div>
         </div>
     @endforeach

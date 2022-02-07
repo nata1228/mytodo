@@ -19,8 +19,15 @@ class TaskController extends Controller
 
     public function store(Request $request){
         $task = new Task();
-        $task->name = $request->name;
+        $task->name = $request->input('name');
+        $task->limit = $request->input('limit');
         $task->save();
+        return redirect('/tasks');
+    }
+
+    public function delete(Request $equest){
+        $task =Task::find($id);
+        $task->delete();
         return redirect('/tasks');
     }
 }
