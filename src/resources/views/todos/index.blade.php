@@ -24,7 +24,7 @@
 
             <div class="btn">
                 <a href="/tasks/{{$task->id}}">編集</a>
-                    <form action="{{route('tasks.delete')}}" method="post">
+                    <form action="{{route('tasks.delete',$task->id)}}" method="post">
                     @csrf
                         <button>削除</button>
                     </form>

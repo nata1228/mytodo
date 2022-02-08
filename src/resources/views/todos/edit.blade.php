@@ -8,7 +8,12 @@
     <title>編集</title>
 </head>
 <body>
-    <input type="text" value="{{$task->name}}">
-    <a href="{{url('/todos')}}">更新する</a>
+    <form action="{{route('tasks.update')}}" method="post">
+    @csrf
+        <input type="text" name="name" value="{{$task->name}}">
+        <input type="date" name="limit" value="{{$task->limit}}">
+        <button>更新する</button>
+    </form>
+    
 </body>
 </html>

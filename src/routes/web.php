@@ -26,4 +26,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('tasks', 'TaskController@index')->name('tasks.index');
 Route::get('/tasks/{id}', 'TaskController@edit')->name('tasks.edit');
 Route::post('/tasks/create','TaskController@store')->name('tasks.store');
-Route::post('/tasks/delete','TaskController@delete')->name('tasks.delete');
+Route::post('/tasks/delete/{id}','TaskController@delete')->name('tasks.delete');
+Route::post('/tasks/update','TaskController@update')->name('tasks.update');
