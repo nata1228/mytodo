@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Task;
+use Symfony\Component\Console\Input\Input;
 
 class TaskController extends Controller
 {
@@ -18,7 +19,7 @@ class TaskController extends Controller
     }
 
     public function update(Request $request){
-        $task = Task::find($request);
+        $task = Task::find($request->input('id'));
         $task->name = $request->input('name');
         $task->limit = $request->input('limit');
         $task->save();

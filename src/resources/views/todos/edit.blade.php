@@ -10,7 +10,8 @@
 <body>
     <form action="{{route('tasks.update')}}" method="post">
     @csrf
-        <input type="text" name="name" value="{{$task->name}}">
+        <input type="hidden" name="id" value="{{$task->id}}">
+        <input type="text" name="name"  value="{{$task->name}}">
         <input type="date" name="limit" value="{{$task->limit}}">
         <button>更新する</button>
     </form>
